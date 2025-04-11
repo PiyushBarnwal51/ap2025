@@ -1,0 +1,28 @@
+### *Map Display (HTML + Leaflet.js):*
+
+html
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Biodiversity Map</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+</head>
+<body>
+  <div id="map" style="height: 500px;"></div>
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script>
+    var map = L.map('map').setView([0, 0], 2);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
+
+    fetch("species_log.json").then(res => res.text()).then(data => {
+      data.trim().split("\n").forEach(line => {
+        let entry = JSON.parse(line);
+        L.marker([entry.location.lat, entry.location.lon])
+          .addTo(map)
+          .bindPopup(`Species ID: ${entry.species_id}`);
+      });
+    });
+  </script>
+</body>
+</html>
+
