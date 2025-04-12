@@ -8,7 +8,29 @@
     <link rel="stylesheet" href="Vps.css">
 </head>
 <body>
+    <imgimg>
     <header>
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Virtual Police Station for FIR Filing and Case Tracking</title>
+            <link rel="stylesheet" href="style.css">
+        </head>
+        <body>
+            <div class="sign-in">
+            <h1>Sign in</h1>
+            <p>Enter Aadhar no.</p>
+            <input type="text" placeholder="xxxx-xxxx-xxxx" class="left-space">
+            <button>Send OTP</button>
+            <p>Enter OTP</p>
+            <div class="otp-container">
+                <input type="text" maxlength="1" class="otp-input" autofocus>
+                <input type="text" maxlength="1" class="otp-input">
+                <input type="text" maxlength="1" class="otp-input">
+                <input type="text" maxlength="1" class="otp-input">
+                </div>
+                <button type="button">Verify OTP</button>
+        </div>    
         <div class="logo">
             <i class="fas fa-shield-alt"></i>
             <h1>Virtual Police Station</h1>
@@ -76,7 +98,7 @@
                 <p>FIR Number: <span id="firNumber"></span></p>
                 <p>You can track your case status using this number.</p>
                 <button id="trackBtn" class="track-btn">Track Your Case</button>
-            </div>
+            </div> 
         </div>
     </main>
 
